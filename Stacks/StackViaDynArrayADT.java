@@ -1,3 +1,7 @@
+package Stacks;
+
+import Arrays.DynamicArrayADT;
+
 import java.util.Iterator;
 
 public class StackViaDynArrayADT<T> implements Iterable<T> {

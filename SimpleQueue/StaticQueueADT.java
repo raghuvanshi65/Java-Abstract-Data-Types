@@ -1,3 +1,5 @@
+package SimpleQueue;
+
 import java.util.Iterator;
 
 @SuppressWarnings("unchecked")

@@ -1,2 +1,4 @@
-*.class
+./PriorityQueues/*.class
+./*/*.class
 .idea
+.out

@@ -35,10 +35,10 @@ public class HeapByDynamicArray<T extends Comparator<T>>{
                 tempArr[i] = arr[i];
             }
             arr = tempArr;
-            
+
             capacity *= 2;
             arr[length] = value;
-            length++; 
+            length++;
         }
     }
 
@@ -52,7 +52,7 @@ public class HeapByDynamicArray<T extends Comparator<T>>{
     }
 
     private T[] heapify(T arr[])
-    {   
+    {
         int i = 0 , j = 2*i+1;
         while(j<length-1&&arr[i].compare(arr[i], arr[j])==1)
         {
@@ -61,20 +61,20 @@ public class HeapByDynamicArray<T extends Comparator<T>>{
             j = 2*i+1;
         }
 
-        int j = 0 , k=2*i+2;
+        int  j = 0 , k=2*i+2;
 
     }
 
     public T poll()
     {
         if(!isEmpty())
-        {   
+        {
             swapper(arr, 0 , length-1);
             arr[length-1] = null;
             length--;
 
 
-            
+
         }
         throw new RuntimeException("heap is empty");
     }

@@ -1,6 +1,6 @@
 package SortingAlgorithms.HeapSort;
 
-import SortingAlgorithms.InsertionSort.InsertionSort;
+import SortingAlgorithms.InsertionSort;
 
 import java.util.Arrays;
 import java.util.List;

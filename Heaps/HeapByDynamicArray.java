@@ -3,7 +3,7 @@ package Heaps;
 import java.util.Comparator;
 
 @SuppressWarnings("unchecked")
-public class HeapByDynamicArray<T extends Comparator<T>>{
+public class HeapByDynamicArray<T extends Comparator<T>> {
     private int length;
     private int capacity;
     private T arr[];
@@ -42,8 +42,7 @@ public class HeapByDynamicArray<T extends Comparator<T>>{
         }
     }
 
-    private T[] swapper(T[] arr , int i , int j)
-    {
+    private T[] swapper(T[] arr, int i, int j) {
         T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -51,28 +50,21 @@ public class HeapByDynamicArray<T extends Comparator<T>>{
         return arr;
     }
 
-    private T[] heapify(T arr[])
-    {
-        int i = 0 , j = 2*i+1;
-        while(j<length-1&&arr[i].compare(arr[i], arr[j])==1)
-        {
+    private T[] heapify(T arr[]) {
+        int i = 0, j = 2 * i + 1;
+        while (j < length - 1 && arr[i].compare(arr[i], arr[j]) == 1) {
             swapper(arr, i, j);
             i = j;
-            j = 2*i+1;
+            j = 2 * i + 1;
         }
-
-        int  j = 0 , k=2*i+2;
-
+        return (T[]) new Object[]{};
     }
 
-    public T poll()
-    {
-        if(!isEmpty())
-        {
-            swapper(arr, 0 , length-1);
-            arr[length-1] = null;
+    public T poll() {
+        if (!isEmpty()) {
+            swapper(arr, 0, length - 1);
+            arr[length - 1] = null;
             length--;
-
 
 
         }

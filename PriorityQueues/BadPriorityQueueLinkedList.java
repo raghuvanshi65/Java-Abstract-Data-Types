@@ -41,7 +41,7 @@ public class BadPriorityQueueLinkedList<T> implements Iterable<T> {
     }
 
     public void add(T val, int priority) {
-        if (priority >= 0 && priority<=10) {
+        if (priority >= 0 && priority <= 10) {
             if (head == null)
                 head = new Node<>(val, priority, null);
             else {
@@ -52,8 +52,7 @@ public class BadPriorityQueueLinkedList<T> implements Iterable<T> {
                 temp = new Node<>(val, priority, null);
             }
             size++;
-        }
-        else{
+        } else {
             throw new RuntimeException("priority must be between 1 to 10 inclusive");
         }
     }
@@ -93,12 +92,12 @@ public class BadPriorityQueueLinkedList<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<T>(){
+        return new Iterator<T>() {
             Node<T> traverse = head;
 
             @Override
             public boolean hasNext() {
-                return traverse!=null;
+                return traverse != null;
             }
 
             @Override
@@ -107,7 +106,7 @@ public class BadPriorityQueueLinkedList<T> implements Iterable<T> {
                 traverse = traverse.next ;
                 return temp.val;
             }
-            
+
         };
     }
 }

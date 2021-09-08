@@ -6,44 +6,44 @@ import java.util.Iterator;
 
 public class StackViaDllADT<T> implements Iterable<T> {
 
-    private DoublyLinkedListADT<T> stack;
+  private DoublyLinkedListADT<T> stack;
 
-    public int size() {
-        return stack.size();
-    }
+  public StackViaDllADT() {
+    stack = new DoublyLinkedListADT<>();
+  }
 
-    public boolean isEmpty() {
-        return stack.size() == 0;
-    }
+  public StackViaDllADT(T data) {
+    stack = new DoublyLinkedListADT<>();
+    push(data);
+  }
 
-    public StackViaDllADT() {
-        stack = new DoublyLinkedListADT<>();
-    }
+  public int size() {
+    return stack.size();
+  }
 
-    public StackViaDllADT(T data) {
-        stack = new DoublyLinkedListADT<>();
-        push(data);
-    }
+  public boolean isEmpty() {
+    return stack.size() == 0;
+  }
 
-    public void push(T data) {
-        stack.addLast(data);
-    }
+  public void push(T data) {
+    stack.addLast(data);
+  }
 
-    public T pull() {
-        return stack.removeLast();
-    }
+  public T pull() {
+    return stack.removeLast();
+  }
 
-    public T peek() {
-        return stack.peekLast();
-    }
+  public T peek() {
+    return stack.peekLast();
+  }
 
-    @Override
-    public Iterator<T> iterator() {
-        return stack.iterator();
-    }
+  @Override
+  public Iterator<T> iterator() {
+    return stack.iterator();
+  }
 
-    @Override
-    public String toString() {
-        return stack.toString();
-    }
+  @Override
+  public String toString() {
+    return stack.toString();
+  }
 }

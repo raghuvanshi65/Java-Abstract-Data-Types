@@ -48,6 +48,29 @@ public class AbstractDirectedGraph {
         }
     }
 
+    private void getDfs(List<Integer> dfs , Set<Integer> vis , int node){
+        if(vis.contains(node))
+            return;
+
+        List<Integer> temp = graph.get(node);
+        dfs.add(node);
+        vis.add(node);
+        for(int i : temp)
+            getDfs(dfs,vis,i);
+    }
+
+    public List<Integer> dfs(){
+        List<Integer> dfs = new ArrayList<>();
+        Set<Integer> visited = new TreeSet<>();
+
+        Iterator<Integer> itr = graph.keySet().iterator();
+        while(visited.size()<graph.size()&& itr.hasNext()){
+            getDfs(dfs,visited,itr.next());
+        }
+
+        return dfs;
+    }
+
     public List<Integer> bfs(){
         Queue<Integer> que = new LinkedList<>();
         Set<Integer> visited = new TreeSet<>();
